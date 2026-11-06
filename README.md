@@ -8,3 +8,15 @@ AIが勝手に改善して，自己開発できるのが 2026年の主流
 first_ask.md を参考に まず repo を構築する．
 エージェントに 投げれば 要件を聞いてくるので それに答え，ハーネス駆動開発に必要な環境構築をさせる．
 
+
+## 環境
+
+Windows11 pro
+wsl ubuntu.H26.4
+
+codex
+
+ollama
+gemma4:26b
+qwen3.8:27b
+
