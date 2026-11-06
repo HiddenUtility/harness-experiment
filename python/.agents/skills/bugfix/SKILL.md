@@ -1,4 +1,9 @@
-# Skill: bugfix
+---
+name: bugfix
+description: 不具合を再現するテストを先に書き、最小修正でグリーンに戻すワークフロー。python + pytest 前提。
+---
+
+# bugfix
 
 ## Description
 Standardizes the process of identifying, reproducing, and fixing bugs to ensure high quality and prevent regressions.

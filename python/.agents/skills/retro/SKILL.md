@@ -1,4 +1,11 @@
-# Skill: retro
+---
+name: retro
+description: 業務スキル実行後の振り返りを行い、KPTを記録するスキル。
+---
+
+
+
+# retro
 
 ## Description
 Conducts a retrospective (KPT) after the execution of a business skill to continuously improve processes and skills.

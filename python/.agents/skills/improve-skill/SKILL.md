@@ -1,4 +1,9 @@
-# Skill: improve-skill
+---
+name: improve-skill
+description: 振り返り (retro) の Try をもとに、既存スキルを改善するスキル。
+---
+
+# improve-skill
 
 ## Description
 Creates improvement proposals for existing skills based on retrospective findings (Try items) and validates them through evaluation.

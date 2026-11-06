@@ -1,4 +1,9 @@
-# Skill: eval-skill
+---
+name: eval-skill
+description: スキルの改善案が、品質と安全性を満たしているかを評価するスキル。
+---
+
+#  eval-skill
 
 ## Description
 Evaluates the quality and effectiveness of an existing skill by applying it to specific tasks and measuring performance against defined criteria.
