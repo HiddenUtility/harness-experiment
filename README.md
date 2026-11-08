@@ -358,7 +358,7 @@ $orchestrator
 project/
 ├── README.md
 │
-├── .codex/
+├── .agents/
 │   └── skills/
 │       ├── create-skill/
 │       │   └── SKILL.md
@@ -396,7 +396,7 @@ project/
 
 | 成果物 | 保存先 | 内容 |
 |---|---|---|
-| 業務スキル | `.codex/skills/` | 業務の手順・判断基準 |
+| 業務スキル | `.agents/skills/` | 業務の手順・判断基準 |
 | テストケース | `tests/` | 期待動作と評価条件 |
 | 評価レポート | `docs/dryrun-reports/` | 評価結果と根拠 |
 | 振り返りレポート | `docs/retrospectives/` | KPT |
@@ -573,12 +573,11 @@ AIが業務スキルを作成する
 
 ## 環境
 
-Windows11 pro
-wsl ubuntu.H26.4
-
-codex
-
-ollama
-gemma4:26b
-qwen3.8:27b
+- Windows11 pro
+    - wsl 
+    - ubuntu.H26.4
+- codex
+- ollama
+    - gemma4:26b
+    - qwen3.8:27b
 

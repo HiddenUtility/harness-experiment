@@ -1,41 +1,32 @@
 ---
 name: bugfix
-description: 不具合を再現するテストを先に書き、最小修正でグリーンに戻すワークフロー。python + pytest 前提。
+description: 不具合を再現するテストを先に書き、最小修正でグリーンに戻すワークフロー。Rust + Cargo 前提。
 ---
 
 # bugfix
 
-## Description
-Standardizes the process of identifying, reproducing, and fixing bugs to ensure high quality and prevent regressions.
+## 入力
 
-## Prerequisites
-- Access to bug reports/issues.
-- Environment with `pytest` and `ruff` configured.
-- Ability to create and run tests.
+- バグ症状 (再現手順、期待結果、実際の結果)
+- 関連ファイルのパス
+- 仕様の所在 (コード内コメント、テスト、要件ドキュメントのどれを正とするか)
 
-## Workflow
-1. **Analyze Bug Report**: Organize symptoms, reproduction steps, expected results, and actual results.
-2. **Investigate**: Locate relevant code and specification/documentation.
-3. **Confirm Specification**: Clarify the intended behavior to avoid guesswork.
-4. **Formulate Hypothesis**: Propose a likely cause for the bug.
-5. **Create Reproduction Test**: Write a `pytest` test case that reproduces the bug.
-6. **Verify Failure**: Confirm that the test fails as expected.
-7. **Implement Fix**: Apply the minimal necessary code changes.
-8. **Verify Fix**: Run the reproduction test and ensure it passes.
-9. **Run Quality Guard**: Execute `python scripts/quality_guard.py` to ensure no regressions or linting issues.
-10. **Document**: Record the investigation, fix, and verification results.
-11. **Trigger Retro**: Execute the `retro` skill to reflect on the process.
+## 手順
 
-## Rules & Constraints
-- **NO** fixing without a reproduction test.
-- **NO** fixing based on assumptions; always confirm the specification.
-- **NO** unrelated refactoring during bug fixing.
-- **NO** excessive changes; keep the fix minimal and focused.
-- **NO** marking as complete without running tests and quality guard.
-- **NO** ignoring quality guard failures.
+1. 関連コードを読み、原因の仮説を立てる
+2. 仕様の所在を確認し、期待される挙動を確定する
+3. 不具合を再現するテストを書く (cargo test を使用)
+    - **重要: テスト名は `test_[関数名]_[期待される結果]` の形式にする (例: `test_add_should_be_5`)**
+4. テストを実行し、期待どおり失敗することを確認する
+5. 最小の修正を適用する
+6. テストを再実行し、グリーンになることを確認する
+7. 内部品質ガード (`scripts/quality_guard.sh`) を実行する
+8. 実施内容と検証結果を記録する
+9. 完了時に `retro` スキルを呼び出す
 
-## Outputs
-- Bug fix implementation (code changes).
-- Reproduction test case.
-- Documentation of the fix.
-- Triggering of the `retro` skill.
+## 禁止事項
+
+- 再現テストを書かずに修正だけを入れる
+- リファクタリングを同時に行う
+- 修正範囲を不必要に広げる
+- 品質ガードの失敗を無視する
