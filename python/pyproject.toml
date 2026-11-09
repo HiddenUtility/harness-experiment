@@ -1,0 +1,17 @@
+[project]
+name = "ai-agent-harness"
+version = "0.1.0"
+description = "An AI agent harness project using Python and Ollama"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
