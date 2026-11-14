@@ -363,9 +363,7 @@ skill-development/proposals/<skill-name>/<run-id>/SKILL.md
 
 評価レポートの保存先：
 
-```text
-skill-development/evaluations/<skill-name>/<run-id>/evaluation.md
-```
+`skill-development/evaluations/<skill-name>/<run-id>/evaluation.md`
 
 評価レポートには以下を記録する。
 
