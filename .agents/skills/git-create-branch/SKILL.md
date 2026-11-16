@@ -2,9 +2,9 @@
 name: git-create-branch
 description: >
   mainまたはdevブランチから作業用ブランチを作成する。
-  ユーザーにイシュー番号と作業概要を確認し、
-  features/<issue-number>-<description> 形式のブランチを作成して
-  リモートリポジトリにpushする。
+  ユーザーに作業概要を確認し、関連するIssue番号があれば任意で取得する。
+  features/<description> または features/<issue-number>-<description>
+  形式のブランチを作成してリモートリポジトリにpushする。
 ---
 
 # Git Create Branch Skill
@@ -13,7 +13,10 @@ description: >
 
 mainまたはdevブランチから、新しい作業用ブランチを作成してください。
 
-ユーザーに作業内容とイシュー番号を確認し、適切なブランチ名を生成してください。
+ユーザーに作業内容を確認してください。
+
+関連するGitHub Issueがある場合は、Issue番号も教えてもらってください。
+Issue番号は任意であり、なくてもブランチを作成できるようにしてください。
 
 ブランチ作成後は、リモートリポジトリにもpushしてください。
 
@@ -25,6 +28,7 @@ mainまたはdevブランチから、新しい作業用ブランチを作成し�
 - 既存ブランチを削除・上書きしてはいけません。
 - ブランチ作成後はリモートにpushしてください。
 - Git操作に失敗した場合は処理を停止してください。
+- Issue番号は任意とし、未指定でも処理を続行してください。
 
 ## 3. Workflow
 
@@ -45,27 +49,36 @@ git branch --show-current
 
 ### Step 2: Ask User for Requirements
 
-ユーザーに以下の2点を確認してください。
+ユーザーに作業概要を確認してください。
 
-1. Issue Number
-   - GitHub Issueの番号
-   - Issueが存在しない場合は `none` を指定可能
+関連するGitHub Issueがある場合は、Issue番号も教えてもらってください。
 
-2. Task Description
+確認する情報:
+
+1. Task Description (必須)
    - これから実施する作業の概要
    - できるだけ具体的な内容
 
-不足している情報がある場合は、追加で質問してください。
+2. Issue Number (任意)
+   - 関連するGitHub Issueの番号
+   - Issueがある場合のみ教えてもらう
+   - Issueがない場合は入力不要
+
+Issue番号が未指定でも、追加で質問せずに処理を続行してください。
+
+作業概要が不明確な場合のみ、追加で質問してください。
 
 ### Step 3: Generate Branch Name
 
 以下の形式でブランチ名を生成してください。
 
+Issue Numberがある場合:
+
 ```text
 features/<issue-number>-<description>
 ```
 
-Issue Numberが `none` の場合:
+Issue Numberがない場合:
 
 ```text
 features/<description>
@@ -78,6 +91,7 @@ features/<description>
 - 空白や特殊文字を使用しない。
 - 内容を簡潔に表現する。
 - Issue Numberがある場合は先頭に配置する。
+- Issue Numberがない場合はdescriptionから開始する。
 - 既存ブランチと重複しないことを確認する。
 
 例:
@@ -86,6 +100,7 @@ features/<description>
 features/123-add-user-authentication
 features/456-fix-login-validation
 features/update-logger
+features/add-user-settings
 ```
 
 生成したブランチ名をユーザーに表示してください。
@@ -177,7 +192,6 @@ Git操作に失敗した場合:
 
 - 作成したブランチ名
 - 作成元のブランチ名
-- Issue Number
+- Issue Number (指定されている場合のみ)
 - リモートpushの結果
 - 現在のブランチ名
-
