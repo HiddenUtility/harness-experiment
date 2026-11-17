@@ -8,6 +8,10 @@ Rust使用
 serde使用
 
 json の Serialize, Deserialize を する関数を実装．
+ジェネリック型を使用 して任意の構造体に変換.
+
+jsonファイルのIOも可能にする．
+jsonファイル出力時にインデントありの関数もつくる．
 
 Serialize, Deserialize を するためのサンプル構造体を定義．
 
