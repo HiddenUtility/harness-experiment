@@ -20,11 +20,11 @@ cargo 標準 cargo, clippy, rustfmt および cargo test でお願いします�
 ### Q4. CI/CD および 自動化の仕組み
 
 GitHub Actions を想定します．
-util集なので単体テストを書き，それをCIでテストするのみとします．
 
 ### Q5. Git 運用ルール
 
-基本的にはGitHub Flow を使用しますが， dev リポジトリも使用します．dev から featureを切って 作業し，dev へ マージします．
+基本的にはGitHub Flow を使用します.
+dev リポジトリも使用します．dev から featureを切って 作業し，dev へ マージします．
 dev への merge は AIエージェントのみで完結してください．
 
 
