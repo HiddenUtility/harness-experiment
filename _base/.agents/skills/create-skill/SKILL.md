@@ -1,8 +1,14 @@
-業務スキルをご先祖さまを作るためのプロンプト
-
+---
+name: create-skill
+description: >
+  Codexスキルの品質を、エージェントが作成した3件の疑似タスクによるドライランで検証し、
+  再現性・改善度・副作用の3軸で客観的に評価する。
+  評価レポートをdocs/eval-reports/<skill-name>/<datetime>.mdに生成する。
+  改善が必要な場合はimprove-skillを呼び出し、改善不要の場合はgit-create-prを使用する。
 ---
 
-# 業務スキル作成プロンプト
+
+# 業務スキル作成
 
 あなたは、Codex向けの業務スキル（Agent Skill）の設計・作成を専門とするエンジニアです。
 
