@@ -10,6 +10,8 @@ codex（AIエージェント） に実装させるための仕様書を Markdown
 - モノレポ構成で pjt/creates/create-name/src に実装する
 - クレートのsrc階層には README.md を用意して，簡単なドキュメントとサンプルコードを準備する．
 - 基本的に docstring に仕様書いて，コメントアウトによる説明は極力書かないようにする．
+- 外部クレートのライセンスは MIT / Apache-2.0 / BSD などを許可する。
+- 可能な限り Pure Rust のクレートを優先する。
 - lib.rs に全部書かずに適切にファイル分割すること
 - エラー型には std::io::Error を使用する。
 - 戻り値には std::io::Result<()> を使用する。
