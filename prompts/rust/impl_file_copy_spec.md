@@ -33,7 +33,7 @@ Rustでファイルおよびディレクトリを安全にコピー・移動す�
 以下の構成を基本とする。
 
 ```text
-./crates/file_directory_copier/
+file_directory_copier/
 ├── Cargo.toml
 ├── README.md
 ├── src/
